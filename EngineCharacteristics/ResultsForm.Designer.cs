@@ -1,6 +1,6 @@
 ﻿namespace EngineCharacteristics
 {
-    partial class Results
+    partial class ResultsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title13 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title15 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title16 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title17 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title18 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.Title title6 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnSave = new System.Windows.Forms.Button();
@@ -250,34 +250,34 @@
             this.chrtPower.BackColor = System.Drawing.Color.Cornsilk;
             this.chrtPower.BackImageTransparentColor = System.Drawing.Color.White;
             this.chrtPower.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea7.BackColor = System.Drawing.Color.SeaShell;
-            chartArea7.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea7.Name = "ChartArea1";
-            this.chrtPower.ChartAreas.Add(chartArea7);
+            chartArea1.BackColor = System.Drawing.Color.SeaShell;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chrtPower.ChartAreas.Add(chartArea1);
             this.chrtPower.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "Legend1";
-            this.chrtPower.Legends.Add(legend7);
+            legend1.Name = "Legend1";
+            this.chrtPower.Legends.Add(legend1);
             this.chrtPower.Location = new System.Drawing.Point(3, 3);
             this.chrtPower.Name = "chrtPower";
-            series7.BorderWidth = 5;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.IsVisibleInLegend = false;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chrtPower.Series.Add(series7);
+            series1.BorderWidth = 5;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.IsVisibleInLegend = false;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chrtPower.Series.Add(series1);
             this.chrtPower.Size = new System.Drawing.Size(568, 418);
             this.chrtPower.TabIndex = 0;
-            title13.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title13.Name = "Title1";
-            title13.Text = "Обороты ДВС, об/мин";
-            title14.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title14.Name = "Title2";
-            title14.Text = "Мощность, кВт";
-            this.chrtPower.Titles.Add(title13);
-            this.chrtPower.Titles.Add(title14);
+            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title1.Name = "Title1";
+            title1.Text = "Обороты ДВС, об/мин";
+            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title2.Name = "Title2";
+            title2.Text = "Мощность, кВт";
+            this.chrtPower.Titles.Add(title1);
+            this.chrtPower.Titles.Add(title2);
             // 
             // tabPage3
             // 
@@ -293,33 +293,33 @@
             // chrtTorque
             // 
             this.chrtTorque.BackColor = System.Drawing.Color.Cornsilk;
-            chartArea8.BackColor = System.Drawing.Color.SeaShell;
-            chartArea8.Name = "ChartArea1";
-            this.chrtTorque.ChartAreas.Add(chartArea8);
+            chartArea2.BackColor = System.Drawing.Color.SeaShell;
+            chartArea2.Name = "ChartArea1";
+            this.chrtTorque.ChartAreas.Add(chartArea2);
             this.chrtTorque.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "Legend1";
-            this.chrtTorque.Legends.Add(legend8);
+            legend2.Name = "Legend1";
+            this.chrtTorque.Legends.Add(legend2);
             this.chrtTorque.Location = new System.Drawing.Point(3, 3);
             this.chrtTorque.Name = "chrtTorque";
-            series8.BorderWidth = 5;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.IsVisibleInLegend = false;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chrtTorque.Series.Add(series8);
+            series2.BorderWidth = 5;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.IsVisibleInLegend = false;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chrtTorque.Series.Add(series2);
             this.chrtTorque.Size = new System.Drawing.Size(568, 418);
             this.chrtTorque.TabIndex = 0;
-            title15.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title15.Name = "Title1";
-            title15.Text = "Обороты ДВС, об/мин";
-            title16.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title16.Name = "Title2";
-            title16.Text = "Момент, Нм";
-            this.chrtTorque.Titles.Add(title15);
-            this.chrtTorque.Titles.Add(title16);
+            title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title3.Name = "Title1";
+            title3.Text = "Обороты ДВС, об/мин";
+            title4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title4.Name = "Title2";
+            title4.Text = "Момент, Нм";
+            this.chrtTorque.Titles.Add(title3);
+            this.chrtTorque.Titles.Add(title4);
             // 
             // tabPage4
             // 
@@ -335,36 +335,36 @@
             // chrtConsumption
             // 
             this.chrtConsumption.BackColor = System.Drawing.Color.Cornsilk;
-            chartArea9.BackColor = System.Drawing.Color.SeaShell;
-            chartArea9.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea9.Name = "ChartArea1";
-            this.chrtConsumption.ChartAreas.Add(chartArea9);
+            chartArea3.BackColor = System.Drawing.Color.SeaShell;
+            chartArea3.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea3.Name = "ChartArea1";
+            this.chrtConsumption.ChartAreas.Add(chartArea3);
             this.chrtConsumption.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend9.Name = "Legend1";
-            this.chrtConsumption.Legends.Add(legend9);
+            legend3.Name = "Legend1";
+            this.chrtConsumption.Legends.Add(legend3);
             this.chrtConsumption.Location = new System.Drawing.Point(3, 3);
             this.chrtConsumption.Name = "chrtConsumption";
-            series9.BorderWidth = 5;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.IsVisibleInLegend = false;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chrtConsumption.Series.Add(series9);
+            series3.BorderWidth = 5;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.IsVisibleInLegend = false;
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.chrtConsumption.Series.Add(series3);
             this.chrtConsumption.Size = new System.Drawing.Size(568, 418);
             this.chrtConsumption.TabIndex = 0;
-            title17.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title17.Name = "Title1";
-            title17.Text = "Обороты ДВС, об/мин";
-            title18.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title18.Name = "Title2";
-            title18.Text = "Расход топлива, г/кВтч";
-            this.chrtConsumption.Titles.Add(title17);
-            this.chrtConsumption.Titles.Add(title18);
+            title5.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
+            title5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title5.Name = "Title1";
+            title5.Text = "Обороты ДВС, об/мин";
+            title6.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
+            title6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            title6.Name = "Title2";
+            title6.Text = "Расход топлива, г/кВтч";
+            this.chrtConsumption.Titles.Add(title5);
+            this.chrtConsumption.Titles.Add(title6);
             // 
-            // Results
+            // ResultsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -373,7 +373,7 @@
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Results";
+            this.Name = "ResultsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Результаты расчёта";
             this.Load += new System.EventHandler(this.Results_Load);

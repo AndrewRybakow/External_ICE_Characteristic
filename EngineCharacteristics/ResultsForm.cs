@@ -8,10 +8,10 @@ using System.IO;
 
 namespace EngineCharacteristics
 {
-    public partial class Results : Form
+    public partial class ResultsForm : Form
     {
 
-        public Results()
+        public ResultsForm()
         {
             InitializeComponent();
         }

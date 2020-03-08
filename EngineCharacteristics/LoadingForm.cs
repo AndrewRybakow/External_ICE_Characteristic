@@ -17,7 +17,7 @@ namespace EngineCharacteristics
 
             DoCalcultaions();
 
-            Results resultsForm = new Results();
+            ResultsForm resultsForm = new ResultsForm();
             resultsForm.Show();
 
             this.Close();
