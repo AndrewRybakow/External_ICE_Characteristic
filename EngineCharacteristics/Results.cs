@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
 using System.IO;
@@ -23,7 +18,7 @@ namespace EngineCharacteristics
 
         private void Results_Load(object sender, EventArgs e)
         {
-            DoCalculations();
+            ShowResults();
             DoGraphs();
         }
 
@@ -34,58 +29,24 @@ namespace EngineCharacteristics
 
 
 
-
-        private void DoCalculations()
+        private void ShowResults()
         {
-            Calculations calculations = new Calculations();
+            lblCoefTorque.Text = ("По моменту: " + InitialData.Km);
 
-            List<double> Frequency;
-            List<double> Power;
-            List<double> Torque;
-            List<double> Consumption;
+            lblCoefFrequency.Text = ("По частоте: " + InitialData.Kn);
 
+            lblCoefA.Text = ("a= " + InitialData.a);
 
-            double Km = calculations.CalculateKm(InitialData.MaxTorque, InitialData.TorqueMaxPower);
-            lblCoefTorque.Text = ("По моменту: " + Km);
-            double Kn = calculations.CalculateKn(InitialData.FrequencyMaxPower, InitialData.FrequencyMaxTorque);
-            lblCoefFrequency.Text = ("По частоте: " + Kn);
+            lblCoefB.Text = ("b= " + InitialData.b);
 
-            double a = calculations.CalculateA(Km, Kn);
-            lblCoefA.Text = ("a= " + a);
-            double b = calculations.CalculateB(Km, Kn);
-            lblCoefB.Text = ("b= " + b);
-            double c = calculations.CalculateC(Km, Kn);
-            lblCoefC.Text = ("c= " + c);
-            lblCoefSum.Text = ("Сумма: " + (a + b + c));
+            lblCoefC.Text = ("c= " + InitialData.c);
 
-            Frequency = calculations.CalculateFrequency(InitialData.MinFrequency, InitialData.MaxFrequency);
-            Power = calculations.CalculatePower(InitialData.MaxPower, a, b, c, InitialData.FrequencyMaxPower, Frequency);
-            Torque = calculations.CalculateTorque(Power, Frequency);
-            Consumption = calculations.CalculateConsumption(InitialData.MinFConsumption, InitialData.FrequencyMaxPower, Frequency);
+            lblCoefSum.Text = ("Сумма: " + (InitialData.a + InitialData.b + InitialData.c));
 
             using (var context = new MyDbContext())
             {
-                context.Database.ExecuteSqlCommand("TRUNCATE TABLE [Results]");
-
-                var result = new List<Result>();
-
-                for (int i = 0; i < Frequency.Count; i++)
-                {
-                    result.Add(new Result()
-                    {
-                        Frequency = Frequency[i],
-                        Power = Power[i],
-                        Torque = Torque[i],
-                        Consumption = Consumption[i]
-                    });
-                }
-
-                context.Results.Load();
-                context.Results.AddRange(result);
-                context.SaveChanges();
-
-                dataGridView1.DataSource = context.Results.Local.ToList();
-                this.dataGridView1.Columns["Id"].Visible = false;
+                dataGridView1.DataSource = context.Results.ToList();
+                dataGridView1.Columns["Id"].Visible = false;
             }
         }
 

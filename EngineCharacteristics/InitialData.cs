@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EngineCharacteristics
+﻿namespace EngineCharacteristics
 {
     static class InitialData
     {
+        // Initial data recived from Form1
+
         public static int MaxFrequency { get; set; }
 
         public static int MinFrequency { get; set; }
@@ -23,5 +19,19 @@ namespace EngineCharacteristics
         public static double TorqueMaxPower { get; set; }
 
         public static double MinFConsumption { get; set; }
+
+        // Data recived in the process of computing
+        
+        public static double Km { get; set; }
+
+        public static double Kn { get; set; }
+
+        public static double a { get; set; }
+
+        public static double b { get; set; }
+
+        public static double c { get; set; }
+
+
     }
 }

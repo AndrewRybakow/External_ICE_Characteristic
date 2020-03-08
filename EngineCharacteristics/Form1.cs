@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EngineCharacteristics
@@ -35,10 +28,8 @@ namespace EngineCharacteristics
 
             InitialData.MinFConsumption = Convert.ToDouble(txtMinFConsumption.Text);
 
-            Results ResultsForm = new Results();
-            ResultsForm.ShowDialog();
-
-
+            LoadingForm loadingForm = new LoadingForm();
+            loadingForm.Show();
         }
     }
 }
