@@ -45,7 +45,7 @@ namespace EngineCharacteristics
             
             
 
-            Frequency = calculations.CalculateFrequency(InitialData.MinFrequency, InitialData.MaxFrequency);
+            Frequency = calculations.CalculateFrequency(InitialData.MinFrequency, InitialData.MaxFrequency, InitialData.Step);
 
             Power = calculations.CalculatePower(InitialData.MaxPower, InitialData.a, InitialData.b, InitialData.c, InitialData.FrequencyMaxPower, Frequency);
 

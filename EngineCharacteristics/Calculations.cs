@@ -4,10 +4,11 @@ namespace EngineCharacteristics
 {
     public class Calculations
     {
-        public List<double> CalculateFrequency(int MinFrequency, int MaxFrequency)
+        public List<double> CalculateFrequency(int MinFrequency, int MaxFrequency, int Step)
         {
             List<double> list = new List<double>();
-            for (int i = MinFrequency; i <= MaxFrequency ; i++)
+
+            for (int i = MinFrequency; i < MaxFrequency + Step; i += Step)
             {
                 list.Add(i);
             }

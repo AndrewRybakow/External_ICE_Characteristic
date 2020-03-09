@@ -12,6 +12,17 @@ namespace EngineCharacteristics
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            if (txtEngineModel.Text == string.Empty)
+            {
+                InitialData.EngineModel = "Неизвестно";
+            }
+            else
+            {
+                InitialData.EngineModel = txtEngineModel.Text;
+            }
+
+            InitialData.Step = Convert.ToInt32(txtStep.Text);
+
             InitialData.MaxFrequency = Convert.ToInt32(txtMaxFrequency.Text);
 
             InitialData.MinFrequency = Convert.ToInt32(txtMinFrequency.Text);

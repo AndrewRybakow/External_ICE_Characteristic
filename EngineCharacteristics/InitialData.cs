@@ -4,6 +4,10 @@
     {
         // Initial data recived from Form1
 
+        public static string EngineModel { get; set; }
+
+        public static int Step { get; set; }
+
         public static int MaxFrequency { get; set; }
 
         public static int MinFrequency { get; set; }

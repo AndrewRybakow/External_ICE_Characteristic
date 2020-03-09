@@ -31,6 +31,8 @@ namespace EngineCharacteristics
 
         private void ShowResults()
         {
+            this.Text = $"Модель: {InitialData.EngineModel}";
+
             lblCoefTorque.Text = ("По моменту: " + InitialData.Km);
 
             lblCoefFrequency.Text = ("По частоте: " + InitialData.Kn);
@@ -83,17 +85,18 @@ namespace EngineCharacteristics
                 {
                     ExcelWorksheet workSheet = MyExcelFile.Workbook.Worksheets.Add("Worksheet1");
 
-                    workSheet.Cells["A1"].Value = "id";
-                    workSheet.Cells["B1"].Value = "Обороты, об/мин";
-                    workSheet.Cells["C1"].Value = "Мощность, кВт";
-                    workSheet.Cells["D1"].Value = "Момент, Нм";
-                    workSheet.Cells["E1"].Value = "Уд. расход, г/кВтч";
+                    workSheet.Cells["A1"].Value = $"Модель двигателя: {InitialData.EngineModel}";
+                    workSheet.Cells["A3"].Value = "id";
+                    workSheet.Cells["B3"].Value = "Обороты, об/мин";
+                    workSheet.Cells["C3"].Value = "Мощность, кВт";
+                    workSheet.Cells["D3"].Value = "Момент, Нм";
+                    workSheet.Cells["E3"].Value = "Уд. расход, г/кВтч";
 
-                    workSheet.Cells["A2"].LoadFromCollection(context.Results.ToList());
+                    workSheet.Cells["A4"].LoadFromCollection(context.Results.ToList());
 
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                     saveFileDialog1.Filter = "Excel files|*.xlsx|All files|*.*";
-                    saveFileDialog1.FileName = "Results " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
+                    saveFileDialog1.FileName = "Двигатель " + InitialData.EngineModel + " " + DateTime.Now.ToString("dd-MM-yyyy") + ".xlsx";
 
                     if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                     {
