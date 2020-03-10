@@ -1,8 +1,10 @@
-﻿namespace EngineCharacteristics
+﻿using System.Collections.Generic;
+
+namespace EngineCharacteristics
 {
     static class InitialData
     {
-        // Initial data recived from Form1
+        // Initial data recived from MainForm
 
         public static string EngineModel { get; set; }
 
@@ -36,6 +38,6 @@
 
         public static double c { get; set; }
 
-
+        public static Dictionary<string, List<Result>> DictionaryOfEngines = new Dictionary<string, List<Result>>();
     }
 }

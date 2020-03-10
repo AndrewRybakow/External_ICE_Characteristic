@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -74,6 +75,8 @@ namespace EngineCharacteristics
 
                 context.Results.AddRange(result);
                 context.SaveChanges();
+
+                InitialData.DictionaryOfEngines.Add($"Модель {InitialData.EngineModel}", context.Results.ToList());
             }
         }
     }

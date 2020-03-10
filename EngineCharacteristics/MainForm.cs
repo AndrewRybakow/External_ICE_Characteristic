@@ -14,7 +14,7 @@ namespace EngineCharacteristics
         {
             if (txtEngineModel.Text == string.Empty)
             {
-                InitialData.EngineModel = "Неизвестно";
+                InitialData.EngineModel = RandomModelName();
             }
             else
             {
@@ -41,6 +41,18 @@ namespace EngineCharacteristics
 
             LoadingForm loadingForm = new LoadingForm();
             loadingForm.Show();
+        }
+        
+
+        private string RandomModelName()
+        {
+            Random index = new Random();
+
+            string Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+            string Lowercase = "abcdefghijklmnopqrstuvwxyz";
+            
+            return $"{Uppercase[index.Next(Uppercase.Length)]}{Lowercase[index.Next(Lowercase.Length)]}0{index.Next(99)}{Lowercase[index.Next(Lowercase.Length)]}";
         }
     }
 }
