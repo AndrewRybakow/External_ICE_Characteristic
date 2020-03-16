@@ -74,6 +74,16 @@ namespace EngineCharacteristics
 
         // Validating events
 
+        #region Validating events
+
+        private void txtStep_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsNumber(e.KeyChar)) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void txtStep_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             try
@@ -95,6 +105,15 @@ namespace EngineCharacteristics
         private void txtStep_Validated(object sender, EventArgs e)
         {
             errorProviderMainForm.SetError(txtStep, string.Empty);
+        }
+
+
+        private void txtMaxFrequency_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsNumber(e.KeyChar)) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtMaxFrequency_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -120,6 +139,15 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtMaxFrequency, string.Empty);
         }
 
+
+        private void txtMinFrequency_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsNumber(e.KeyChar)) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void txtMinFrequency_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             try
@@ -141,6 +169,15 @@ namespace EngineCharacteristics
         private void txtMinFrequency_Validated(object sender, EventArgs e)
         {
             errorProviderMainForm.SetError(txtMinFrequency, string.Empty);
+        }
+
+
+        private void txtFrequencyMaxTorque_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsNumber(e.KeyChar)) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtFrequencyMaxTorque_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -166,6 +203,15 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtFrequencyMaxTorque, string.Empty);
         }
 
+
+        private void txtFrequencyMaxPower_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsNumber(e.KeyChar)) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void txtFrequencyMaxPower_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             try
@@ -187,6 +233,15 @@ namespace EngineCharacteristics
         private void txtFrequencyMaxPower_Validated(object sender, EventArgs e)
         {
             errorProviderMainForm.SetError(txtFrequencyMaxPower, string.Empty);
+        }
+
+
+        private void txtMaxPower_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtMaxPower_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -212,6 +267,15 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtMaxPower, string.Empty);
         }
 
+
+        private void txtMaxTorque_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void txtMaxTorque_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             try
@@ -233,6 +297,15 @@ namespace EngineCharacteristics
         private void txtMaxTorque_Validated(object sender, EventArgs e)
         {
             errorProviderMainForm.SetError(txtMaxTorque, string.Empty);
+        }
+
+
+        private void txtTorqueMaxPower_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void txtTorqueMaxPower_Validating(object sender, System.ComponentModel.CancelEventArgs e)
@@ -258,6 +331,15 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtTorqueMaxPower, string.Empty);
         }
 
+
+        private void txtMinFConsumption_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) && ((char)Keys.Back != e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void txtMinFConsumption_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             try
@@ -281,7 +363,11 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtMinFConsumption, string.Empty);
         }
 
+        #endregion
+
         // Functions to verify initial data
+
+        #region Functions to verify initial data
 
         private bool ValidateStep(int step, int maxFrequency, int minFrequency, out string errorMessage)
         {
@@ -444,5 +530,7 @@ namespace EngineCharacteristics
             errorMessage = "";
             return true;
         }
+
+        #endregion
     }
 }

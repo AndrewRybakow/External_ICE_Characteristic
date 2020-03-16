@@ -155,6 +155,7 @@
             this.txtMinFConsumption.Size = new System.Drawing.Size(100, 20);
             this.txtMinFConsumption.TabIndex = 13;
             this.txtMinFConsumption.Text = "326";
+            this.txtMinFConsumption.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinFConsumption_KeyPress);
             this.txtMinFConsumption.Validating += new System.ComponentModel.CancelEventHandler(this.txtMinFConsumption_Validating);
             this.txtMinFConsumption.Validated += new System.EventHandler(this.txtMinFConsumption_Validated);
             // 
@@ -165,6 +166,7 @@
             this.txtTorqueMaxPower.Size = new System.Drawing.Size(100, 20);
             this.txtTorqueMaxPower.TabIndex = 12;
             this.txtTorqueMaxPower.Text = "328";
+            this.txtTorqueMaxPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTorqueMaxPower_KeyPress);
             this.txtTorqueMaxPower.Validating += new System.ComponentModel.CancelEventHandler(this.txtTorqueMaxPower_Validating);
             this.txtTorqueMaxPower.Validated += new System.EventHandler(this.txtTorqueMaxPower_Validated);
             // 
@@ -175,6 +177,7 @@
             this.txtMaxTorque.Size = new System.Drawing.Size(100, 20);
             this.txtMaxTorque.TabIndex = 11;
             this.txtMaxTorque.Text = "402";
+            this.txtMaxTorque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaxTorque_KeyPress);
             this.txtMaxTorque.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaxTorque_Validating);
             this.txtMaxTorque.Validated += new System.EventHandler(this.txtMaxTorque_Validated);
             // 
@@ -185,6 +188,7 @@
             this.txtMaxFrequency.Size = new System.Drawing.Size(100, 20);
             this.txtMaxFrequency.TabIndex = 7;
             this.txtMaxFrequency.Text = "3200";
+            this.txtMaxFrequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaxFrequency_KeyPress);
             this.txtMaxFrequency.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaxFrequency_Validating);
             this.txtMaxFrequency.Validated += new System.EventHandler(this.txtMaxFrequency_Validated);
             // 
@@ -195,6 +199,7 @@
             this.txtMinFrequency.Size = new System.Drawing.Size(100, 20);
             this.txtMinFrequency.TabIndex = 8;
             this.txtMinFrequency.Text = "850";
+            this.txtMinFrequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinFrequency_KeyPress);
             this.txtMinFrequency.Validating += new System.ComponentModel.CancelEventHandler(this.txtMinFrequency_Validating);
             this.txtMinFrequency.Validated += new System.EventHandler(this.txtMinFrequency_Validated);
             // 
@@ -215,6 +220,7 @@
             this.txtFrequencyMaxPower.Size = new System.Drawing.Size(100, 20);
             this.txtFrequencyMaxPower.TabIndex = 10;
             this.txtFrequencyMaxPower.Text = "3200";
+            this.txtFrequencyMaxPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrequencyMaxPower_KeyPress);
             this.txtFrequencyMaxPower.Validating += new System.ComponentModel.CancelEventHandler(this.txtFrequencyMaxPower_Validating);
             this.txtFrequencyMaxPower.Validated += new System.EventHandler(this.txtFrequencyMaxPower_Validated);
             // 
@@ -235,6 +241,7 @@
             this.txtMaxPower.Size = new System.Drawing.Size(100, 20);
             this.txtMaxPower.TabIndex = 9;
             this.txtMaxPower.Text = "110";
+            this.txtMaxPower.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaxPower_KeyPress);
             this.txtMaxPower.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaxPower_Validating);
             this.txtMaxPower.Validated += new System.EventHandler(this.txtMaxPower_Validated);
             // 
@@ -255,6 +262,7 @@
             this.txtFrequencyMaxTorque.Size = new System.Drawing.Size(100, 20);
             this.txtFrequencyMaxTorque.TabIndex = 15;
             this.txtFrequencyMaxTorque.Text = "1800";
+            this.txtFrequencyMaxTorque.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFrequencyMaxTorque_KeyPress);
             this.txtFrequencyMaxTorque.Validating += new System.ComponentModel.CancelEventHandler(this.txtFrequencyMaxTorque_Validating);
             this.txtFrequencyMaxTorque.Validated += new System.EventHandler(this.txtFrequencyMaxTorque_Validated);
             // 
@@ -320,6 +328,7 @@
             this.txtStep.Size = new System.Drawing.Size(61, 20);
             this.txtStep.TabIndex = 3;
             this.txtStep.Text = "1";
+            this.txtStep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStep_KeyPress);
             this.txtStep.Validating += new System.ComponentModel.CancelEventHandler(this.txtStep_Validating);
             this.txtStep.Validated += new System.EventHandler(this.txtStep_Validated);
             // 
