@@ -12,6 +12,22 @@ namespace EngineCharacteristics
 
         private void btnCalculate_Click(object sender, EventArgs e)
         {
+            try
+            {
+                GetInitialData();
+
+                LoadingForm loadingForm = new LoadingForm();
+                loadingForm.Show();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Неверные входные данные. Проверьте ввод!", "Ошибка входных данных",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void GetInitialData()
+        {
             if (txtEngineModel.Text == string.Empty)
             {
                 InitialData.EngineModel = RandomModelName();
@@ -27,7 +43,7 @@ namespace EngineCharacteristics
 
             InitialData.MinFrequency = Convert.ToInt32(txtMinFrequency.Text);
 
-            InitialData.FrequencyMaxTorque = Convert.ToDouble(txtFrequencyMaxTorque.Text);
+            InitialData.FrequencyMaxTorque = Convert.ToInt32(txtFrequencyMaxTorque.Text);
 
             InitialData.FrequencyMaxPower = Convert.ToInt32(txtFrequencyMaxPower.Text);
 
@@ -38,12 +54,8 @@ namespace EngineCharacteristics
             InitialData.TorqueMaxPower = Convert.ToDouble(txtTorqueMaxPower.Text);
 
             InitialData.MinFConsumption = Convert.ToDouble(txtMinFConsumption.Text);
-
-            LoadingForm loadingForm = new LoadingForm();
-            loadingForm.Show();
         }
-        
-        
+
         private string RandomModelName()
         {
             Random index = new Random();
@@ -55,9 +67,222 @@ namespace EngineCharacteristics
             return $"{Uppercase[index.Next(Uppercase.Length)]}{Lowercase[index.Next(Lowercase.Length)]}0{index.Next(99)}{Lowercase[index.Next(Lowercase.Length)]}";
         }
 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
+
+        // Validating events
+
+        private void txtStep_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateStep(Convert.ToInt32(txtStep.Text), Convert.ToInt32(txtMaxFrequency.Text), Convert.ToInt32(txtMinFrequency.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtStep.Select(0, txtStep.Text.Length);
+
+                    errorProviderMainForm.SetError(txtStep, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtStep.Text = string.Empty;
+            }
+        }
+
+        private void txtStep_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtStep, string.Empty);
+        }
+
+        private void txtMaxFrequency_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateMaxFrequency(Convert.ToInt32(txtMaxFrequency.Text), Convert.ToInt32(txtMinFrequency.Text), Convert.ToInt32(txtStep.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtMaxFrequency.Select(0, txtMaxFrequency.Text.Length);
+
+                    errorProviderMainForm.SetError(txtMaxFrequency, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                errorProviderMainForm.SetError(txtMaxFrequency, string.Empty);
+            }
+        }
+
+        private void txtMaxFrequency_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtMaxFrequency, string.Empty);
+        }
+
+        private void txtMinFrequency_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateMinFrequency(Convert.ToInt32(txtMinFrequency.Text), Convert.ToInt32(txtMaxFrequency.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtMinFrequency.Select(0, txtMinFrequency.Text.Length);
+
+                    errorProviderMainForm.SetError(txtMinFrequency, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtMinFrequency.Text = string.Empty;
+            }
+        }
+
+        private void txtMinFrequency_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtMinFrequency, string.Empty);
+        }
+
+        private void txtFrequencyMaxTorque_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateFrequencyMaxTorque(Convert.ToDouble(txtFrequencyMaxTorque.Text), Convert.ToInt32(txtMinFrequency.Text), Convert.ToInt32(txtMaxFrequency.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtFrequencyMaxTorque.Select(0, txtFrequencyMaxTorque.Text.Length);
+
+                    errorProviderMainForm.SetError(txtFrequencyMaxTorque, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtFrequencyMaxTorque.Text = string.Empty;
+            }
+        }
+
+        private void txtFrequencyMaxTorque_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtFrequencyMaxTorque, string.Empty);
+        }
+
+        private void txtFrequencyMaxPower_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateFrequencyMaxPower(Convert.ToInt32(txtFrequencyMaxPower.Text), Convert.ToInt32(txtMinFrequency.Text), Convert.ToInt32(txtMaxFrequency.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtFrequencyMaxPower.Select(0, txtFrequencyMaxPower.Text.Length);
+
+                    errorProviderMainForm.SetError(txtFrequencyMaxPower, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtFrequencyMaxPower.Text = string.Empty;
+            }
+        }
+
+        private void txtFrequencyMaxPower_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtFrequencyMaxPower, string.Empty);
+        }
+
+        private void txtMaxPower_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateMaxPower(Convert.ToDouble(txtMaxPower.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtMaxPower.Select(0, txtMaxPower.Text.Length);
+
+                    errorProviderMainForm.SetError(txtMaxPower, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtMaxPower.Text = string.Empty;
+            }
+        }
+
+        private void txtMaxPower_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtMaxPower, string.Empty);
+        }
+
+        private void txtMaxTorque_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateMaxTorque(Convert.ToDouble(txtMaxTorque.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtMaxTorque.Select(0, txtMaxTorque.Text.Length);
+
+                    errorProviderMainForm.SetError(txtMaxTorque, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtMaxTorque.Text = string.Empty;
+            }
+        }
+
+        private void txtMaxTorque_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtMaxTorque, string.Empty);
+        }
+
+        private void txtTorqueMaxPower_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateTorqueMaxPower(Convert.ToDouble(txtTorqueMaxPower.Text), Convert.ToDouble(txtMaxTorque.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtTorqueMaxPower.Select(0, txtTorqueMaxPower.Text.Length);
+
+                    errorProviderMainForm.SetError(txtTorqueMaxPower, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtTorqueMaxPower.Text = string.Empty;
+            }
+        }
+
+        private void txtTorqueMaxPower_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtTorqueMaxPower, string.Empty);
+        }
+
+        private void txtMinFConsumption_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            try
+            {
+                if (!ValidateMinFConsumption(Convert.ToDouble(txtMinFConsumption.Text), out string errorMessage))
+                {
+                    e.Cancel = true;
+                    txtMinFConsumption.Select(0, txtMinFConsumption.Text.Length);
+
+                    errorProviderMainForm.SetError(txtMinFConsumption, errorMessage);
+                }
+            }
+            catch (FormatException)
+            {
+                txtMinFConsumption.Text = string.Empty;
+            }
+        }
+
+        private void txtMinFConsumption_Validated(object sender, EventArgs e)
+        {
+            errorProviderMainForm.SetError(txtMinFConsumption, string.Empty);
+        }
 
         // Functions to verify initial data
-   
+
         private bool ValidateStep(int step, int maxFrequency, int minFrequency, out string errorMessage)
         {
             if (step <= 0)
@@ -93,6 +318,7 @@ namespace EngineCharacteristics
             if (maxFrequency < minFrequency)
             {
                 errorMessage = "Максимальная частота должна быть больше минимальной!";
+                return false;
             }
 
             errorMessage = "";

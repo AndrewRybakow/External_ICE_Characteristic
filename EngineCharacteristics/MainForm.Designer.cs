@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,17 +55,19 @@
             this.txtStep = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.errorProviderMainForm = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMainForm)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.16268F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.83732F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.08238F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.91762F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 7);
@@ -92,7 +95,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.86963F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.86963F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(426, 228);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(437, 228);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -152,6 +155,8 @@
             this.txtMinFConsumption.Size = new System.Drawing.Size(100, 20);
             this.txtMinFConsumption.TabIndex = 13;
             this.txtMinFConsumption.Text = "326";
+            this.txtMinFConsumption.Validating += new System.ComponentModel.CancelEventHandler(this.txtMinFConsumption_Validating);
+            this.txtMinFConsumption.Validated += new System.EventHandler(this.txtMinFConsumption_Validated);
             // 
             // txtTorqueMaxPower
             // 
@@ -160,6 +165,8 @@
             this.txtTorqueMaxPower.Size = new System.Drawing.Size(100, 20);
             this.txtTorqueMaxPower.TabIndex = 12;
             this.txtTorqueMaxPower.Text = "328";
+            this.txtTorqueMaxPower.Validating += new System.ComponentModel.CancelEventHandler(this.txtTorqueMaxPower_Validating);
+            this.txtTorqueMaxPower.Validated += new System.EventHandler(this.txtTorqueMaxPower_Validated);
             // 
             // txtMaxTorque
             // 
@@ -168,6 +175,8 @@
             this.txtMaxTorque.Size = new System.Drawing.Size(100, 20);
             this.txtMaxTorque.TabIndex = 11;
             this.txtMaxTorque.Text = "402";
+            this.txtMaxTorque.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaxTorque_Validating);
+            this.txtMaxTorque.Validated += new System.EventHandler(this.txtMaxTorque_Validated);
             // 
             // txtMaxFrequency
             // 
@@ -176,6 +185,8 @@
             this.txtMaxFrequency.Size = new System.Drawing.Size(100, 20);
             this.txtMaxFrequency.TabIndex = 7;
             this.txtMaxFrequency.Text = "3200";
+            this.txtMaxFrequency.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaxFrequency_Validating);
+            this.txtMaxFrequency.Validated += new System.EventHandler(this.txtMaxFrequency_Validated);
             // 
             // txtMinFrequency
             // 
@@ -184,6 +195,8 @@
             this.txtMinFrequency.Size = new System.Drawing.Size(100, 20);
             this.txtMinFrequency.TabIndex = 8;
             this.txtMinFrequency.Text = "850";
+            this.txtMinFrequency.Validating += new System.ComponentModel.CancelEventHandler(this.txtMinFrequency_Validating);
+            this.txtMinFrequency.Validated += new System.EventHandler(this.txtMinFrequency_Validated);
             // 
             // label4
             // 
@@ -202,6 +215,8 @@
             this.txtFrequencyMaxPower.Size = new System.Drawing.Size(100, 20);
             this.txtFrequencyMaxPower.TabIndex = 10;
             this.txtFrequencyMaxPower.Text = "3200";
+            this.txtFrequencyMaxPower.Validating += new System.ComponentModel.CancelEventHandler(this.txtFrequencyMaxPower_Validating);
+            this.txtFrequencyMaxPower.Validated += new System.EventHandler(this.txtFrequencyMaxPower_Validated);
             // 
             // label3
             // 
@@ -220,6 +235,8 @@
             this.txtMaxPower.Size = new System.Drawing.Size(100, 20);
             this.txtMaxPower.TabIndex = 9;
             this.txtMaxPower.Text = "110";
+            this.txtMaxPower.Validating += new System.ComponentModel.CancelEventHandler(this.txtMaxPower_Validating);
+            this.txtMaxPower.Validated += new System.EventHandler(this.txtMaxPower_Validated);
             // 
             // label8
             // 
@@ -238,11 +255,13 @@
             this.txtFrequencyMaxTorque.Size = new System.Drawing.Size(100, 20);
             this.txtFrequencyMaxTorque.TabIndex = 15;
             this.txtFrequencyMaxTorque.Text = "1800";
+            this.txtFrequencyMaxTorque.Validating += new System.ComponentModel.CancelEventHandler(this.txtFrequencyMaxTorque_Validating);
+            this.txtFrequencyMaxTorque.Validated += new System.EventHandler(this.txtFrequencyMaxTorque_Validated);
             // 
             // btnCalculate
             // 
             this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalculate.Location = new System.Drawing.Point(186, 388);
+            this.btnCalculate.Location = new System.Drawing.Point(187, 388);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(125, 47);
             this.btnCalculate.TabIndex = 1;
@@ -301,11 +320,13 @@
             this.txtStep.Size = new System.Drawing.Size(61, 20);
             this.txtStep.TabIndex = 3;
             this.txtStep.Text = "1";
+            this.txtStep.Validating += new System.ComponentModel.CancelEventHandler(this.txtStep_Validating);
+            this.txtStep.Validated += new System.EventHandler(this.txtStep_Validated);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
-            this.groupBox1.Location = new System.Drawing.Point(99, 12);
+            this.groupBox1.Location = new System.Drawing.Point(100, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(299, 76);
             this.groupBox1.TabIndex = 3;
@@ -316,17 +337,21 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(22, 104);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(452, 262);
+            this.groupBox2.Size = new System.Drawing.Size(455, 262);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Исходные данные:";
+            // 
+            // errorProviderMainForm
+            // 
+            this.errorProviderMainForm.ContainerControl = this;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(496, 458);
+            this.ClientSize = new System.Drawing.Size(500, 458);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCalculate);
@@ -336,12 +361,14 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Внешняя скоростная характеристика ДВС";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderMainForm)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,6 +400,7 @@
         private System.Windows.Forms.TextBox txtStep;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ErrorProvider errorProviderMainForm;
     }
 }
 
