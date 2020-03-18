@@ -76,6 +76,8 @@ namespace EngineCharacteristics
 
         #region Validating events
 
+            // Step of calculations
+
         private void txtStep_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((!char.IsNumber(e.KeyChar)) && ((char)Keys.Back != e.KeyChar))
@@ -107,6 +109,7 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtStep, string.Empty);
         }
 
+            // Maximum frequency
 
         private void txtMaxFrequency_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -130,7 +133,7 @@ namespace EngineCharacteristics
             }
             catch (FormatException)
             {
-                errorProviderMainForm.SetError(txtMaxFrequency, string.Empty);
+                txtMaxFrequency.Text = string.Empty;
             }
         }
 
@@ -139,6 +142,7 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtMaxFrequency, string.Empty);
         }
 
+            // Minimum frequency
 
         private void txtMinFrequency_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -171,6 +175,7 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtMinFrequency, string.Empty);
         }
 
+            // Frequency at maximum torque
 
         private void txtFrequencyMaxTorque_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -203,6 +208,7 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtFrequencyMaxTorque, string.Empty);
         }
 
+            // Frequency at maximum power
 
         private void txtFrequencyMaxPower_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -235,7 +241,8 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtFrequencyMaxPower, string.Empty);
         }
 
-
+            // Maximum power
+        
         private void txtMaxPower_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) && ((char)Keys.Back != e.KeyChar))
@@ -267,6 +274,7 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtMaxPower, string.Empty);
         }
 
+            // Maximum torque
 
         private void txtMaxTorque_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -299,6 +307,7 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtMaxTorque, string.Empty);
         }
 
+            // Torque at maximum power
 
         private void txtTorqueMaxPower_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -331,6 +340,7 @@ namespace EngineCharacteristics
             errorProviderMainForm.SetError(txtTorqueMaxPower, string.Empty);
         }
 
+            // Minimum fuel consumption
 
         private void txtMinFConsumption_KeyPress(object sender, KeyPressEventArgs e)
         {
