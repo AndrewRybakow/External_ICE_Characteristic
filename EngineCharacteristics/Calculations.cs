@@ -4,11 +4,11 @@ namespace EngineCharacteristics
 {
     public class Calculations
     {
-        public List<double> CalculateFrequency(int MinFrequency, int MaxFrequency, int Step)
+        public List<double> CalculateFrequency(int minFrequency, int maxFrequency, int step)
         {
             List<double> list = new List<double>();
 
-            for (int i = MinFrequency; i < MaxFrequency + Step; i += Step)
+            for (int i = minFrequency; i < maxFrequency + step; i += step)
             {
                 list.Add(i);
             }
@@ -16,37 +16,45 @@ namespace EngineCharacteristics
             return list;
         }
 
-        public double CalculateKm(double MaxTorque, double TorqueMaxPower)
+        // Coefficient of engine flexibility by torque
+
+        public double CalculateKm(double maxTorque, double torqueMaxPower)
         {
-            return MaxTorque / TorqueMaxPower;
+            return maxTorque / torqueMaxPower;
         }
 
-        public double CalculateKn(double FrequencyMaxPower, double FrequencyMaxTorque)
+        // Coefficient of engine flexibility by frequency
+
+        public double CalculateKn(double frequencyMaxPower, double frequencyMaxTorque)
         {
-            return FrequencyMaxPower / FrequencyMaxTorque;
+            return frequencyMaxPower / frequencyMaxTorque;
         }
 
-        public double CalculateA(double Km, double Kn)
+        // Coefficients a, b, c for ICE according to  A. I. Grishkevich
+
+        public double CalculateA(double km, double kn)
         {
-            return ((Km * Kn * (2 - Kn)) - 1) / ((Kn * (2 - Kn)) - 1);
+            return ((km * kn * (2 - kn)) - 1) / ((kn * (2 - kn)) - 1);
         }
 
-        public double CalculateB(double Km, double Kn)
+        public double CalculateB(double km, double kn)
         {
-            return -((2 * Kn * (Km - 1)) / ((Kn * (2 - Kn)) - 1));
+            return -((2 * kn * (km - 1)) / ((kn * (2 - kn)) - 1));
         }
 
-        public double CalculateC(double Km, double Kn)
+        public double CalculateC(double km, double kn)
         {
-            return (Kn * Kn * (Km - 1)) / ((Kn * (2 - Kn)) - 1);
+            return (kn * kn * (km - 1)) / ((kn * (2 - kn)) - 1);
         }
 
-        public List<double> CalculatePower(double MaxPower, double a, double b, double c, int FrequencyMaxPower, List<double> frequency)
+        // Power calculations are based on Leideman’s formula for ICE
+
+        public List<double> CalculatePower(double maxPower, double a, double b, double c, int frequencyMaxPower, List<double> frequency)
         {
             List<double> list = new List<double>();
             for (int i = 0; i < frequency.Count; i++)
             {
-                list.Add(MaxPower * ((a * (frequency[i] / FrequencyMaxPower)) + (b * System.Math.Pow((frequency[i] / FrequencyMaxPower), 2)) + (c * System.Math.Pow((frequency[i] / FrequencyMaxPower), 3))));
+                list.Add(maxPower * ((a * (frequency[i] / frequencyMaxPower)) + (b * System.Math.Pow((frequency[i] / frequencyMaxPower), 2)) + (c * System.Math.Pow((frequency[i] / frequencyMaxPower), 3))));
             }
 
             return list;
@@ -63,12 +71,12 @@ namespace EngineCharacteristics
             return list;
         }
 
-        public List<double> CalculateConsumption(double MinFConsumption, int FrequencyMaxPower, List<double> frequnecy)
+        public List<double> CalculateConsumption(double minFConsumption, int frequencyMaxPower, List<double> frequnecy)
         {
             List<double> list = new List<double>();
             for (int i = 0; i < frequnecy.Count; i++)
             {
-                list.Add(MinFConsumption * (1.55 - (1.55 * (frequnecy[i] / FrequencyMaxPower)) + System.Math.Pow((frequnecy[i] / FrequencyMaxPower), 2)));
+                list.Add(minFConsumption * (1.55 - (1.55 * (frequnecy[i] / frequencyMaxPower)) + System.Math.Pow((frequnecy[i] / frequencyMaxPower), 2)));
             }
 
             return list;
