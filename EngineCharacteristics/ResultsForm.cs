@@ -5,6 +5,9 @@ using System.Linq;
 using System.Windows.Forms;
 using OfficeOpenXml;
 using System.IO;
+using LiveCharts; //Core of the library
+using LiveCharts.Wpf; //The WPF controls
+using LiveCharts.WinForms; //the WinForm wrappers
 
 namespace EngineCharacteristics
 {
