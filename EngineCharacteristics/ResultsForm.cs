@@ -89,7 +89,7 @@ namespace EngineCharacteristics
             {
                 new LineSeries
                 {
-                    Title = "Мощность, кВт",
+                    Title = "Мощность:",
                     Values = ListPowerPoints,
                     LineSmoothness = 1
                 }
@@ -115,13 +115,55 @@ namespace EngineCharacteristics
 
             #endregion
 
+            // Torque chart
+            #region Torque chart
+
+            ChartValues<ObservablePoint> ListTorquePoints = new ChartValues<ObservablePoint>();
+
             for (int i = 0; i < Frequency.Count; i++)
             {
-                chrtTorque.Series["Series1"].Points.AddXY(Frequency[i], Torque[i]);
-                chrtConsumption.Series["Series1"].Points.AddXY(Frequency[i], Consumption[i]);
+                ListTorquePoints.Add(new ObservablePoint
+                {
+                    X = Frequency[i],
+                    Y = Torque[i]
+                });
             }
 
+            chrtTorque.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Момент:",
+                    Values = ListTorquePoints,
+                    LineSmoothness = 1
+                }
+            };
+
+            chrtTorque.Background = new SolidColorBrush(Colors.Cornsilk);
+
+            chrtTorque.AxisX.Add(new Axis
+            {
+                Title = "Обороты двигателя",
+                FontSize = 20,
+                Foreground = new SolidColorBrush(Colors.Black),
+                LabelFormatter = value => value + " об/мин"
+            });
+
+            chrtTorque.AxisY.Add(new Axis
+            {
+                Title = "Момент двигателя",
+                FontSize = 20,
+                Foreground = new SolidColorBrush(Colors.Black),
+                LabelFormatter = value => value + " Нм"
+            });
             
+            #endregion
+
+            for (int i = 0; i < Frequency.Count; i++)
+            {
+                //chrtTorque.Series["Series1"].Points.AddXY(Frequency[i], Torque[i]);
+                chrtConsumption.Series["Series1"].Points.AddXY(Frequency[i], Consumption[i]);
+            }
         }
 
         private void DoSaveExcel()

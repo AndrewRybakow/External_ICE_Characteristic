@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -59,8 +54,8 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.chrtConsumption = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chrtTorque = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chrtPower = new LiveCharts.WinForms.CartesianChart();
+            this.chrtTorque = new LiveCharts.WinForms.CartesianChart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,7 +65,6 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chrtTorque)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -267,55 +261,24 @@
             // chrtConsumption
             // 
             this.chrtConsumption.BackColor = System.Drawing.Color.Cornsilk;
-            chartArea2.BackColor = System.Drawing.Color.SeaShell;
-            chartArea2.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea2.Name = "ChartArea1";
-            this.chrtConsumption.ChartAreas.Add(chartArea2);
+            chartArea1.BackColor = System.Drawing.Color.SeaShell;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea1.Name = "ChartArea1";
+            this.chrtConsumption.ChartAreas.Add(chartArea1);
             this.chrtConsumption.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chrtConsumption.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chrtConsumption.Legends.Add(legend1);
             this.chrtConsumption.Location = new System.Drawing.Point(3, 3);
             this.chrtConsumption.Name = "chrtConsumption";
-            series2.BorderWidth = 5;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.IsVisibleInLegend = false;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chrtConsumption.Series.Add(series2);
-            this.chrtConsumption.Size = new System.Drawing.Size(562, 412);
-            this.chrtConsumption.TabIndex = 0;
-            title3.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title3.Name = "Title1";
-            title3.Text = "Обороты ДВС, об/мин";
-            title4.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title4.Name = "Title2";
-            title4.Text = "Расход топлива, г/кВтч";
-            this.chrtConsumption.Titles.Add(title3);
-            this.chrtConsumption.Titles.Add(title4);
-            // 
-            // chrtTorque
-            // 
-            this.chrtTorque.BackColor = System.Drawing.Color.Cornsilk;
-            chartArea1.BackColor = System.Drawing.Color.SeaShell;
-            chartArea1.Name = "ChartArea1";
-            this.chrtTorque.ChartAreas.Add(chartArea1);
-            this.chrtTorque.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chrtTorque.Legends.Add(legend1);
-            this.chrtTorque.Location = new System.Drawing.Point(3, 3);
-            this.chrtTorque.Name = "chrtTorque";
             series1.BorderWidth = 5;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.IsVisibleInLegend = false;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.chrtTorque.Series.Add(series1);
-            this.chrtTorque.Size = new System.Drawing.Size(562, 412);
-            this.chrtTorque.TabIndex = 0;
+            this.chrtConsumption.Series.Add(series1);
+            this.chrtConsumption.Size = new System.Drawing.Size(562, 412);
+            this.chrtConsumption.TabIndex = 0;
             title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
             title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title1.Name = "Title1";
@@ -323,9 +286,9 @@
             title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
             title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             title2.Name = "Title2";
-            title2.Text = "Момент, Нм";
-            this.chrtTorque.Titles.Add(title1);
-            this.chrtTorque.Titles.Add(title2);
+            title2.Text = "Расход топлива, г/кВтч";
+            this.chrtConsumption.Titles.Add(title1);
+            this.chrtConsumption.Titles.Add(title2);
             // 
             // chrtPower
             // 
@@ -336,6 +299,16 @@
             this.chrtPower.Size = new System.Drawing.Size(562, 412);
             this.chrtPower.TabIndex = 0;
             this.chrtPower.Text = "cartesianChart1";
+            // 
+            // chrtTorque
+            // 
+            this.chrtTorque.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.chrtTorque.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chrtTorque.Location = new System.Drawing.Point(3, 3);
+            this.chrtTorque.Name = "chrtTorque";
+            this.chrtTorque.Size = new System.Drawing.Size(562, 412);
+            this.chrtTorque.TabIndex = 0;
+            this.chrtTorque.Text = "cartesianChart1";
             // 
             // ResultsForm
             // 
@@ -363,7 +336,6 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chrtTorque)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -390,7 +362,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Torque;
         private System.Windows.Forms.DataGridViewTextBoxColumn Consumption;
         private System.Windows.Forms.DataVisualization.Charting.Chart chrtConsumption;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chrtTorque;
         private LiveCharts.WinForms.CartesianChart chrtPower;
+        private LiveCharts.WinForms.CartesianChart chrtTorque;
     }
 }

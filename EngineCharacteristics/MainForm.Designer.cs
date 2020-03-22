@@ -327,7 +327,7 @@
             this.txtStep.Name = "txtStep";
             this.txtStep.Size = new System.Drawing.Size(61, 20);
             this.txtStep.TabIndex = 3;
-            this.txtStep.Text = "1";
+            this.txtStep.Text = "100";
             this.txtStep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStep_KeyPress);
             this.txtStep.Validating += new System.ComponentModel.CancelEventHandler(this.txtStep_Validating);
             this.txtStep.Validated += new System.EventHandler(this.txtStep_Validated);
