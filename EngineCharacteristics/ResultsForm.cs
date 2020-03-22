@@ -5,9 +5,10 @@ using System.Linq;
 using System.Windows.Forms;
 using OfficeOpenXml;
 using System.IO;
-using LiveCharts; //Core of the library
-using LiveCharts.Wpf; //The WPF controls
-using LiveCharts.WinForms; //the WinForm wrappers
+using LiveCharts;
+using LiveCharts.Wpf;
+using LiveCharts.Defaults;
+using System.Windows.Media;
 
 namespace EngineCharacteristics
 {
@@ -70,9 +71,52 @@ namespace EngineCharacteristics
                 Consumption = context.Results.Select(Results => Results.Consumption).ToList();
             }
 
+            // Power chart
+            #region Power chart
+
+            ChartValues<ObservablePoint> ListPowerPoints = new ChartValues<ObservablePoint>();
+
             for (int i = 0; i < Frequency.Count; i++)
             {
-                chrtPower.Series["Series1"].Points.AddXY(Frequency[i], Power[i]);
+                ListPowerPoints.Add(new ObservablePoint
+                {
+                    X = Frequency[i],
+                    Y = Power[i]
+                });
+            }
+
+            chrtPower.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Мощность, кВт",
+                    Values = ListPowerPoints,
+                    LineSmoothness = 1
+                }
+            };
+
+            chrtPower.Background = new SolidColorBrush(Colors.Cornsilk);
+
+            chrtPower.AxisX.Add(new Axis
+            {
+                Title = "Обороты двигателя",
+                FontSize = 20,
+                Foreground = new SolidColorBrush(Colors.Black),
+                LabelFormatter = value => value + " об/мин"
+            });
+
+            chrtPower.AxisY.Add(new Axis
+            {
+                Title = "Мощность двигателя",
+                FontSize = 20,
+                Foreground = new SolidColorBrush(Colors.Black),
+                LabelFormatter = value => value + " кВт"
+            });
+
+            #endregion
+
+            for (int i = 0; i < Frequency.Count; i++)
+            {
                 chrtTorque.Series["Series1"].Points.AddXY(Frequency[i], Torque[i]);
                 chrtConsumption.Series["Series1"].Points.AddXY(Frequency[i], Consumption[i]);
             }
