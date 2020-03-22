@@ -99,8 +99,8 @@ namespace EngineCharacteristics
 
             chrtPower.AxisX.Add(new Axis
             {
-                Title = "Обороты двигателя",
-                FontSize = 20,
+                Title = "Обороты коленчатого вала",
+                FontSize = 18,
                 Foreground = new SolidColorBrush(Colors.Black),
                 LabelFormatter = value => value + " об/мин"
             });
@@ -108,7 +108,7 @@ namespace EngineCharacteristics
             chrtPower.AxisY.Add(new Axis
             {
                 Title = "Мощность двигателя",
-                FontSize = 20,
+                FontSize = 18,
                 Foreground = new SolidColorBrush(Colors.Black),
                 LabelFormatter = value => value + " кВт"
             });
@@ -143,8 +143,8 @@ namespace EngineCharacteristics
 
             chrtTorque.AxisX.Add(new Axis
             {
-                Title = "Обороты двигателя",
-                FontSize = 20,
+                Title = "Обороты коленчатого вала",
+                FontSize = 18,
                 Foreground = new SolidColorBrush(Colors.Black),
                 LabelFormatter = value => value + " об/мин"
             });
@@ -152,18 +152,56 @@ namespace EngineCharacteristics
             chrtTorque.AxisY.Add(new Axis
             {
                 Title = "Момент двигателя",
-                FontSize = 20,
+                FontSize = 18,
                 Foreground = new SolidColorBrush(Colors.Black),
                 LabelFormatter = value => value + " Нм"
             });
-            
+
             #endregion
+
+            // Consumption chart
+            #region Consumption chart
+
+            ChartValues<ObservablePoint> ListConsumptionPoints = new ChartValues<ObservablePoint>();
 
             for (int i = 0; i < Frequency.Count; i++)
             {
-                //chrtTorque.Series["Series1"].Points.AddXY(Frequency[i], Torque[i]);
-                chrtConsumption.Series["Series1"].Points.AddXY(Frequency[i], Consumption[i]);
+                ListConsumptionPoints.Add(new ObservablePoint
+                {
+                    X = Frequency[i],
+                    Y = Consumption[i]
+                });
             }
+
+            chrtConsumption.Series = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "Удельный расход:",
+                    Values = ListConsumptionPoints,
+                    LineSmoothness = 1
+                }
+            };
+
+            chrtConsumption.Background = new SolidColorBrush(Colors.Cornsilk);
+
+            chrtConsumption.AxisX.Add(new Axis
+            {
+                Title = "Обороты коленчатого вала",
+                FontSize = 18,
+                Foreground = new SolidColorBrush(Colors.Black),
+                LabelFormatter = value => value + " об/мин"
+            });
+
+            chrtConsumption.AxisY.Add(new Axis
+            {
+                Title = "Удельный расход топлива",
+                FontSize = 18,
+                Foreground = new SolidColorBrush(Colors.Black),
+                LabelFormatter = value => value + " г/кВтч"
+            });
+
+            #endregion
         }
 
         private void DoSaveExcel()

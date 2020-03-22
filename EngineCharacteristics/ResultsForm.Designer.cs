@@ -28,11 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultsForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -53,9 +48,9 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.chrtConsumption = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chrtPower = new LiveCharts.WinForms.CartesianChart();
             this.chrtTorque = new LiveCharts.WinForms.CartesianChart();
+            this.chrtConsumption = new LiveCharts.WinForms.CartesianChart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,7 +59,6 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -258,38 +252,6 @@
             this.tabPage4.Text = "График удельного расхода топлива";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // chrtConsumption
-            // 
-            this.chrtConsumption.BackColor = System.Drawing.Color.Cornsilk;
-            chartArea1.BackColor = System.Drawing.Color.SeaShell;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea1.Name = "ChartArea1";
-            this.chrtConsumption.ChartAreas.Add(chartArea1);
-            this.chrtConsumption.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chrtConsumption.Legends.Add(legend1);
-            this.chrtConsumption.Location = new System.Drawing.Point(3, 3);
-            this.chrtConsumption.Name = "chrtConsumption";
-            series1.BorderWidth = 5;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.IsVisibleInLegend = false;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chrtConsumption.Series.Add(series1);
-            this.chrtConsumption.Size = new System.Drawing.Size(562, 412);
-            this.chrtConsumption.TabIndex = 0;
-            title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title1.Name = "Title1";
-            title1.Text = "Обороты ДВС, об/мин";
-            title2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Left;
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            title2.Name = "Title2";
-            title2.Text = "Расход топлива, г/кВтч";
-            this.chrtConsumption.Titles.Add(title1);
-            this.chrtConsumption.Titles.Add(title2);
-            // 
             // chrtPower
             // 
             this.chrtPower.Cursor = System.Windows.Forms.Cursors.Cross;
@@ -309,6 +271,16 @@
             this.chrtTorque.Size = new System.Drawing.Size(562, 412);
             this.chrtTorque.TabIndex = 0;
             this.chrtTorque.Text = "cartesianChart1";
+            // 
+            // chrtConsumption
+            // 
+            this.chrtConsumption.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.chrtConsumption.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chrtConsumption.Location = new System.Drawing.Point(3, 3);
+            this.chrtConsumption.Name = "chrtConsumption";
+            this.chrtConsumption.Size = new System.Drawing.Size(562, 412);
+            this.chrtConsumption.TabIndex = 0;
+            this.chrtConsumption.Text = "cartesianChart1";
             // 
             // ResultsForm
             // 
@@ -335,7 +307,6 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chrtConsumption)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -361,8 +332,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Power;
         private System.Windows.Forms.DataGridViewTextBoxColumn Torque;
         private System.Windows.Forms.DataGridViewTextBoxColumn Consumption;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chrtConsumption;
         private LiveCharts.WinForms.CartesianChart chrtPower;
         private LiveCharts.WinForms.CartesianChart chrtTorque;
+        private LiveCharts.WinForms.CartesianChart chrtConsumption;
     }
 }
