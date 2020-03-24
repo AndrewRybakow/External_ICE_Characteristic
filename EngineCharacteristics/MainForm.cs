@@ -17,7 +17,10 @@ namespace EngineCharacteristics
                 GetInitialData();
 
                 LoadingForm loadingForm = new LoadingForm();
-                loadingForm.Show();
+
+                loadingForm.StartPosition = FormStartPosition.CenterParent;
+
+                loadingForm.ShowDialog(this);
             }
             catch (FormatException)
             {
