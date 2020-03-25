@@ -29,6 +29,11 @@ namespace EngineCharacteristics
             }
         }
 
+        private void btnClearTextBoxes_Click(object sender, EventArgs e)
+        {
+            ClearInitialDataTextBoxes();
+        }
+
         private void GetInitialData()
         {
             if (txtEngineModel.Text == string.Empty)
@@ -57,6 +62,27 @@ namespace EngineCharacteristics
             InitialData.TorqueMaxPower = Convert.ToDouble(txtTorqueMaxPower.Text);
 
             InitialData.MinFConsumption = Convert.ToDouble(txtMinFConsumption.Text);
+        }
+
+        private void ClearInitialDataTextBoxes()
+        {
+            txtEngineModel.Text = string.Empty;
+
+            txtMaxFrequency.Text = string.Empty;
+
+            txtMinFrequency.Text = string.Empty;
+
+            txtFrequencyMaxTorque.Text = string.Empty;
+
+            txtFrequencyMaxPower.Text = string.Empty;
+
+            txtMaxPower.Text = string.Empty;
+
+            txtMaxTorque.Text = string.Empty;
+
+            txtTorqueMaxPower.Text = string.Empty;
+
+            txtMinFConsumption.Text = string.Empty;
         }
 
         private string RandomModelName()

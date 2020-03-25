@@ -56,6 +56,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.errorProviderMainForm = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnClearTextBoxes = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -269,7 +270,7 @@
             // btnCalculate
             // 
             this.btnCalculate.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.btnCalculate.Location = new System.Drawing.Point(187, 388);
+            this.btnCalculate.Location = new System.Drawing.Point(186, 390);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(125, 47);
             this.btnCalculate.TabIndex = 1;
@@ -346,7 +347,7 @@
             this.groupBox2.Controls.Add(this.tableLayoutPanel1);
             this.groupBox2.Location = new System.Drawing.Point(22, 104);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(455, 262);
+            this.groupBox2.Size = new System.Drawing.Size(455, 254);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Исходные данные:";
@@ -355,12 +356,24 @@
             // 
             this.errorProviderMainForm.ContainerControl = this;
             // 
+            // btnClearTextBoxes
+            // 
+            this.btnClearTextBoxes.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnClearTextBoxes.Location = new System.Drawing.Point(352, 364);
+            this.btnClearTextBoxes.Name = "btnClearTextBoxes";
+            this.btnClearTextBoxes.Size = new System.Drawing.Size(100, 26);
+            this.btnClearTextBoxes.TabIndex = 1;
+            this.btnClearTextBoxes.Text = "Очистить ввод";
+            this.btnClearTextBoxes.UseVisualStyleBackColor = true;
+            this.btnClearTextBoxes.Click += new System.EventHandler(this.btnClearTextBoxes_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(500, 458);
+            this.ClientSize = new System.Drawing.Size(500, 446);
+            this.Controls.Add(this.btnClearTextBoxes);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCalculate);
@@ -410,6 +423,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ErrorProvider errorProviderMainForm;
+        private System.Windows.Forms.Button btnClearTextBoxes;
     }
 }
 
