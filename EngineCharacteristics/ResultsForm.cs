@@ -14,6 +14,7 @@ namespace EngineCharacteristics
 {
     public partial class ResultsForm : Form
     {
+        readonly int EngineId = InitialData.EngineId;
 
         public ResultsForm()
         {
@@ -23,7 +24,13 @@ namespace EngineCharacteristics
         private void Results_Load(object sender, EventArgs e)
         {
             ShowResults();
+
             DoGraphs();
+        }
+
+        private void ResultsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            InitialData.DictionaryOfEngines.Remove(Convert.ToString(EngineId));
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -219,7 +226,7 @@ namespace EngineCharacteristics
                     workSheet.Cells["D3"].Value = "Момент, Нм";
                     workSheet.Cells["E3"].Value = "Уд. расход, г/кВтч";
 
-                    workSheet.Cells["A4"].LoadFromCollection(InitialData.DictionaryOfEngines[this.Text]);
+                    workSheet.Cells["A4"].LoadFromCollection(InitialData.DictionaryOfEngines[Convert.ToString(EngineId)]);
 
                     SaveFileDialog saveFileDialog1 = new SaveFileDialog();
                     saveFileDialog1.Filter = "Excel files|*.xlsx|All files|*.*";

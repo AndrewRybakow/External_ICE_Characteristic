@@ -8,6 +8,8 @@ namespace EngineCharacteristics
 
         public static string EngineModel { get; set; }
 
+        public static int EngineId { get; set; }
+
         public static int Step { get; set; }
 
         public static int MaxFrequency { get; set; }

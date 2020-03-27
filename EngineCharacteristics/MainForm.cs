@@ -16,11 +16,12 @@ namespace EngineCharacteristics
             {
                 GetInitialData();
 
-                LoadingForm loadingForm = new LoadingForm();
+                LoadingForm loadingForm = new LoadingForm
+                {
+                    StartPosition = FormStartPosition.CenterParent
+                };
 
-                loadingForm.StartPosition = FormStartPosition.CenterParent;
-
-                loadingForm.ShowDialog(this);
+                loadingForm.ShowDialog();
             }
             catch (FormatException)
             {
@@ -44,6 +45,10 @@ namespace EngineCharacteristics
             {
                 InitialData.EngineModel = txtEngineModel.Text;
             }
+
+            Random Id = new Random();
+
+            InitialData.EngineId = Id.Next(1000);
 
             InitialData.Step = Convert.ToInt32(txtStep.Text);
 

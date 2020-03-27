@@ -46,10 +46,10 @@
             this.lblCoefB = new System.Windows.Forms.Label();
             this.lblCoefA = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.chrtPower = new LiveCharts.WinForms.CartesianChart();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chrtTorque = new LiveCharts.WinForms.CartesianChart();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.chrtConsumption = new LiveCharts.WinForms.CartesianChart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -230,6 +230,16 @@
             this.tabPage2.Text = "График мощности";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // chrtPower
+            // 
+            this.chrtPower.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.chrtPower.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chrtPower.Location = new System.Drawing.Point(3, 3);
+            this.chrtPower.Name = "chrtPower";
+            this.chrtPower.Size = new System.Drawing.Size(562, 412);
+            this.chrtPower.TabIndex = 0;
+            this.chrtPower.Text = "cartesianChart1";
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.chrtTorque);
@@ -241,6 +251,16 @@
             this.tabPage3.Text = "График момента";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // chrtTorque
+            // 
+            this.chrtTorque.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.chrtTorque.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chrtTorque.Location = new System.Drawing.Point(3, 3);
+            this.chrtTorque.Name = "chrtTorque";
+            this.chrtTorque.Size = new System.Drawing.Size(562, 412);
+            this.chrtTorque.TabIndex = 0;
+            this.chrtTorque.Text = "cartesianChart1";
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.chrtConsumption);
@@ -251,26 +271,6 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "График удельного расхода топлива";
             this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // chrtPower
-            // 
-            this.chrtPower.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.chrtPower.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chrtPower.Location = new System.Drawing.Point(3, 3);
-            this.chrtPower.Name = "chrtPower";
-            this.chrtPower.Size = new System.Drawing.Size(562, 412);
-            this.chrtPower.TabIndex = 0;
-            this.chrtPower.Text = "cartesianChart1";
-            // 
-            // chrtTorque
-            // 
-            this.chrtTorque.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.chrtTorque.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chrtTorque.Location = new System.Drawing.Point(3, 3);
-            this.chrtTorque.Name = "chrtTorque";
-            this.chrtTorque.Size = new System.Drawing.Size(562, 412);
-            this.chrtTorque.TabIndex = 0;
-            this.chrtTorque.Text = "cartesianChart1";
             // 
             // chrtConsumption
             // 
@@ -296,6 +296,8 @@
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Результаты расчёта";
+            this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ResultsForm_FormClosed);
             this.Load += new System.EventHandler(this.Results_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
