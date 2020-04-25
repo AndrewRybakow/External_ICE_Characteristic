@@ -296,7 +296,6 @@
             this.Padding = new System.Windows.Forms.Padding(3);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Результаты расчёта";
-            this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ResultsForm_FormClosed);
             this.Load += new System.EventHandler(this.Results_Load);
             this.tabControl1.ResumeLayout(false);
